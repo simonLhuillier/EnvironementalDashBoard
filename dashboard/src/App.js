@@ -1,26 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
+import Main from './components/main';
+import { Link } from 'react-router-dom';
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div className="demo-big-content">
+    <Layout style={{background: 'url(https://zupimages.net/up/19/10/vrd7.jpg) center / cover'}}  >
+    <Header style={{background: 'white', opacity: '.6' }}  transparent   title={<Link style={{textDecoration: 'none', color: 'black' }} to="/">Dashboard</Link>} scroll>
+            <Navigation >
+                <Link to="/landingpage" style={{fontWeigh : 'bold', color: 'black' }}>Home</Link>
+                <Link to="/admin" style={{fontWeigh :'bold', color: 'black' }}>Admin</Link>
+            </Navigation>
+        </Header>
+        <Drawer title={<Link style={{textDecoration: 'none', color: 'black' }} to="/">Dashboard</Link>}>
+            <Navigation className="nav">
+              <Link  to="/landingpage">Home</Link>
+              <Link to="/admin">Admin</Link>
+            </Navigation>
+        </Drawer>
+        <Content>
+            <div className="page-content" />
+            <Main/>
+        </Content>
+    </Layout>
+</div>
+
+
       </div>
+      
     );
   }
 }
