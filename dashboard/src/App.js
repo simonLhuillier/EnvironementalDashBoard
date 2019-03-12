@@ -10,7 +10,7 @@ class App extends Component {
       <div className="App">
         <div className="demo-big-content">
     <Layout style={{background: 'url(https://zupimages.net/up/19/11/jsjn.jpg) center / cover'}}  >
-    <Header style={{background: 'white', opacity: '.6' }}  transparent   title={<Link style={{textDecoration: 'none', color: 'black' }} to="/">Environemental Dashboard</Link>} scroll>
+    <Header style={{background: 'white', opacity: '.8' }}  transparent   title={<Link style={{textDecoration: 'none', color: 'black' }} to="/">Environemental Dashboard</Link>} scroll>
             <Navigation >
                 <Link to="/" style={{fontWeigh : 'bold', color: 'black' }}>Home</Link>
                 <Link to="/admin" style={{fontWeigh :'bold', color: 'black' }}>Admin</Link>
@@ -19,7 +19,7 @@ class App extends Component {
         <Drawer title={<Link style={{textDecoration: 'none', color: 'black' }} to="/">Dashboard</Link>}>
             <Navigation className="nav">
               <Link  to="/">Home</Link>
-              <Link to="/admin">Admin</Link> 
+              <Link to="/admin">Admin</Link>      
             </Navigation>
         </Drawer>
         <Content>

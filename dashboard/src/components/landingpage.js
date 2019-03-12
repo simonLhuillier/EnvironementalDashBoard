@@ -13,13 +13,13 @@ class Landing extends Component {
           <Cell className="resume-left-col" col={4} >
           <Line/>
           </Cell>
-          <Cell className="resume-left-col" col={4} >
-          <Radar/>
-          </Cell>
-          <Cell className="resume-left-col" col={4} >
+          <Cell className="resume-left-col" col={3} >
           <Pie/>
           </Cell>
-          <Cell className="resume-left-col" col={4} >
+          <Cell className="resume-left-col" col={5} >
+          <Radar/>
+          </Cell>
+          <Cell className="resume-left-col" col={6} >
           <Checklist/>
           </Cell>
         </Grid>

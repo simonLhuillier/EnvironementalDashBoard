@@ -33,7 +33,7 @@ const data = [
           <PolarGrid />
           <PolarAngleAxis dataKey="subject" />
           <PolarRadiusAxis />
-          <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+          <Radar name="Mike" dataKey="A" stroke="rgb(60, 165, 107)" fill="rgb(60, 165, 107)" fillOpacity={0.6} />
         </RadarChart>
       );
     }

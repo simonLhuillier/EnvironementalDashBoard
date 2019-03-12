@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
 } from 'recharts';
 
 const data = [
@@ -28,63 +28,26 @@ const data = [
 ];
 
 export default class Example extends PureComponent {
-  static jsfiddleUrl = 'https://jsfiddle.net/alidingling/xqjtetw0/';
+  static jsfiddleUrl = 'https://jsfiddle.net/alidingling/c1rLyqj1/';
 
   render() {
     return (
-      <div>
-        <LineChart
-          width={200}
-          height={100}
-          data={data}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" interval="preserveEnd" />
-          <YAxis interval="preserveEnd" />
-          <Legend />
-          <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-        </LineChart>
-
-        <LineChart
-          width={200}
-          height={100}
-          data={data}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" interval="preserveStart" />
-          <YAxis interval="preserveStart" />
-          <Legend />
-          <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-        </LineChart>
-
-        <LineChart
-          width={200}
-          height={100}
-          data={data}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" interval="preserveStartEnd" />
-          <YAxis interval="preserveStartEnd" />
-          <Legend />
-          <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-        </LineChart>
-
-        <LineChart
-          width={200}
-          height={100}
-          data={data}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" interval={0} angle={30} dx={20} />
-          <YAxis />
-          <Legend />
-          <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-        </LineChart>
-      </div>
+      <AreaChart
+        width={500}
+        height={400}
+        data={data}
+        margin={{
+          top: 10, right: 30, left: 0, bottom: 0,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Area type="monotone" dataKey="uv" stackId="1" stroke="#8884d8" fill="#8884d8" />
+        <Area type="monotone" dataKey="pv" stackId="1" stroke="#82ca9d" fill="#82ca9d" />
+        <Area type="monotone" dataKey="amt" stackId="1" stroke="#ffc658" fill="#ffc658" />
+      </AreaChart>
     );
   }
 }
